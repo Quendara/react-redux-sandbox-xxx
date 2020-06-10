@@ -14,7 +14,7 @@ const Todos = ({ todos, deleteTodoHandle }) => {
               deleteTodoHandle(todo.id);
             }}
           >
-            {todo.id} - {todo.filename}
+            {todo.id} - {todo.filename} - {todo.rating}
           </span>
         </div>
       );

@@ -1,19 +1,21 @@
 
 import { imagedata } from "../data/test"
+import { ADD_TODO } from "../actions/actions"
 
-var defaultState = 0;
+// var defaultState = 0;
 
 // use defaultState as state
-function todos(state = imagedata, action) {
+ function todos(state = imagedata, action) {
   switch (action.type) {
-    case 'TEST':
-      return state
-    case 'DECREMENT':
-      //return state - 1
+    case ADD_TODO:
+      let characters = state.filter( item => item.id !== action.id )
+      return characters
     default:
       return state
   }
 } 
+
+export default todos;
 
 
 // store.dispatch({ type: 'TEST' })
