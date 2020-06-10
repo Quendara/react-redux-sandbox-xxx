@@ -3,14 +3,24 @@ import AddTodo from "./AddTodo";
 import Todos from "./Todos";
 import { Provider } from 'react-redux'
 import { render } from "react-dom";
+import { createStore } from "redux";
 
-import { store } from "./store.js";
+import { rootReducer } from "./reducer";
 // import { imagedata } from "./test";
 
 //import {z} from "zebras";
 const z = require("zebras");
 
-import "./style.css";
+
+// import "./style.css";
+
+// init with function
+export const store = createStore(rootReducer)
+
+
+store.subscribe(() => {
+  console.log("state . test", store.getState().length );
+});  
 
 //
 

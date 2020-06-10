@@ -1,10 +1,10 @@
-import { createStore } from "redux";
-import { imagedata } from "./test"
+
+import { imagedata } from "../data/test"
 
 var defaultState = 0;
 
 // use defaultState as state
-function action(state = imagedata, action) {
+function todos(state = imagedata, action) {
   switch (action.type) {
     case 'TEST':
       return state
@@ -15,14 +15,6 @@ function action(state = imagedata, action) {
   }
 } 
 
-// init with function
-export const store = createStore(action)
-
-
-store.subscribe(() => {
-  console.log("state . test", store.getState().length );
-  // setTodos( store.getState() ) 
-});  
 
 // store.dispatch({ type: 'TEST' })
 // 1
